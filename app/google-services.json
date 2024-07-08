@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "367369821003",
+    "project_id": "dermaface-8d97f",
+    "storage_bucket": "dermaface-8d97f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367369821003:android:462273d4d3c6292dfba6ce",
+        "android_client_info": {
+          "package_name": "com.dicoding.capstone.dermaface"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367369821003-6ui9g65k1oeeqc67ei0a8866pd2o10nb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dicoding.capstone.dermaface",
+            "certificate_hash": "41f81a3625e7ce7a6e02060636c50630b3ad93f0"
+          }
+        },
+        {
+          "client_id": "367369821003-s76ttg1nh2rqvtcr30qnpr1vleknnl0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAICLbkULYsxcSuMk9dnb3lgTY9UIWvL4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367369821003-s76ttg1nh2rqvtcr30qnpr1vleknnl0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
