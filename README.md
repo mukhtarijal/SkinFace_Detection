@@ -123,6 +123,3 @@ Untuk pertanyaan lebih lanjut, hubungi [mukhtarijal6902@gmail.com](mukhtarijal69
 - **A282D4KX3580** – Hayatun Nupus – Universitas Negeri Padang
 - **A282D4KY3619** – Mukhtarijal – Universitas Negeri Padang
 
-### Cloud Computing (CC)
-- **C382D4KY0695** – Riski Dwi Prakoso – Universitas Merdeka Malang
-- **C732D4KX1260** – Nilam Darma Taksiah – Universitas Bung Hatta
