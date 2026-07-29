@@ -1,125 +1,128 @@
-# DermaFace: An App for Your Facial Skin and Care 
+# ✨ DermaFace: Facial Skin Condition Detection & Care App
 
-![Bangkit Academy Logo](https://github.com/wahyuardiantito/DermaFace-An-App-For-Your-Facial-Skin-and-Care/assets/90948812/d041b0d2-430e-43b9-9ae6-9c374c2ecf26)
+<p align="center">
+  <img src="screenshots/splash_login.png" alt="DermaFace Login UI" width="30%" style="border-radius: 12px; margin-right: 10px;" />
+  <img src="screenshots/scan_camera.png" alt="DermaFace Camera Scan" width="30%" style="border-radius: 12px; margin-right: 10px;" />
+  <img src="screenshots/detection_result.png" alt="DermaFace Analysis Result" width="30%" style="border-radius: 12px;" />
+</p>
 
-**DermaFace** adalah aplikasi mobile yang menggunakan teknik pembelajaran mesin untuk mendeteksi penyakit kulit wajah dan memberikan saran perawatan kulit. Aplikasi ini bertujuan untuk membantu pengguna, terutama remaja, dalam menilai kondisi kulit wajah mereka dan memberikan tips perawatan kulit yang relevan.  
+**DermaFace** adalah aplikasi Android berbasis **Machine Learning (ML)** dan **Android Jetpack / Kotlin** yang didedikasikan untuk mendeteksi berbagai jenis penyakit dan masalah kulit wajah (seperti Jerawat/Acne, Flek Hitam/Hyperpigmentation, Eczema, Pori-pori Besar, dll). 
 
-## Table of Contents
+Aplikasi ini dikembangkan sebagai **Proyek Akhir Capstone Bangkit Academy** untuk membantu pengguna menganalisis kesehatan kulit wajah secara mandiri serta mendapatkan rekomendasi perawatan kulit (*skincare routine*) yang aman dan personal.
 
-- [Fitur Utama](#fitur-utama)
-- [Langkah Pengembangan](#langkah-pengembangan)
-- [Instalasi](#instalasi)
-- [Penggunaan](#penggunaan)
-- [Kontribusi](#kontribusi)
-- [Kontak](#kontak)
-- [Anggota Kelompok](#anggota-kelompok)
+---
 
-## Fitur Utama
+## 📸 Tampilan Aplikasi (Screenshots)
 
-- **Deteksi Penyakit Kulit Wajah**: Menggunakan model pembelajaran mesin untuk menganalisis dan mendeteksi masalah kulit wajah.
-- **Tips Perawatan Kulit**: Menyediakan saran perawatan kulit berdasarkan hasil deteksi.
-- **Penyimpanan Data**: Menyimpan data pengguna dan hasil deteksi di Firebase.
-- **Antarmuka Pengguna**: Desain UI yang ramah dan mudah digunakan.
+<table>
+  <tr>
+    <td width="33%" align="center">
+      <strong>Splash & Autentikasi Google</strong><br/><br/>
+      <img src="screenshots/splash_login.png" alt="DermaFace Login Screen" width="100%"/>
+    </td>
+    <td width="33%" align="center">
+      <strong>Live Facial Camera Scan</strong><br/><br/>
+      <img src="screenshots/scan_camera.png" alt="DermaFace Camera Screen" width="100%"/>
+    </td>
+    <td width="33%" align="center">
+      <strong>Hasil Analisis & Rekomendasi</strong><br/><br/>
+      <img src="screenshots/detection_result.png" alt="DermaFace Result Screen" width="100%"/>
+    </td>
+  </tr>
+</table>
 
-## Langkah Pengembangan
+---
 
-1. **Desain UI di Figma**
-   - Mendesain antarmuka pengguna yang menarik dan mudah digunakan.
-   - [Desain Figma](https://www.figma.com/design/41kR9ZXvR5QTEj7eNnguAW/DermaFace?node-id=0-1&t=m9Aa9tCVLZDglX04-1) <!-- Ganti link dengan yang sesuai -->
+## 🌟 Fitur Utama
 
-2. **Konversi Desain ke Layout XML di Android Studio**
-   - Mengimplementasikan desain Figma ke dalam layout XML untuk Android.
+- 🧬 **Deteksi Penyakit & Masalah Kulit Wajah (TensorFlow Lite & Firebase ML)**
+  - Menganalisis kondisi kulit wajah secara presisi dengan tingkat akurasi dan *confidence score* tinggi.
+- 💡 **Rekomendasi Skincare Personal**
+  - Memberikan tips perawatan kulit harian (*Daily Routine*) serta kandungan produk yang disarankan.
+- 🔐 **Autentikasi Aman dengan Firebase & Google Sign-In**
+  - Kemudahan masuk bagi pengguna dengan integrasi Google Auth.
+- 📜 **Riwayat Analisis (History & Cloud Firestore)**
+  - Menyimpan riwayat deteksi kulit wajah pengguna ke Cloud Firestore agar dapat dipantau dari waktu ke waktu.
+- 📰 **Artikel Kesehatan Kulit**
+  - Menyajikan panduan dan artikel seputar kesehatan wajah dari Firebase Realtime Database.
 
-3. **Integrasi Autentikasi Google Firebase**
-   - Menyediakan opsi login menggunakan Google untuk kemudahan pengguna.
-   - [Dokumentasi Firebase Authentication](https://firebase.google.com/docs/auth)
+---
 
-4. **Pengembangan Rest API untuk Artikel**
-   - Membuat Rest API untuk artikel dengan menggunakan Firebase Realtime Database.
-   - Mengintegrasikan API untuk menampilkan artikel kesehatan wajah secara dinamis dalam aplikasi.
-   - [Dokumentasi Firebase Realtime Database](https://firebase.google.com/docs/database)
+## 🛠️ Spesifikasi Arsitektur & Teknologi
 
-5. **Integrasi Model Pembelajaran Mesin dengan Firebase ML**
-   - Menggunakan model Machine Learning untuk deteksi penyakit kulit wajah.
-   - Model disimpan di Firebase ML dan diunduh oleh aplikasi untuk menganalisis gambar yang diunggah pengguna.
-   - - Nama model: `Face_Detection`
-   - [Dokumentasi Firebase ML](https://firebase.google.com/docs/ml)   
-   - [Link Model](https://drive.google.com/file/d/1xJ7R9ANRQRVOhv2Jb7go1CHKI0MP4pjS/view?usp=sharing)
+- **Bahasa Pemrograman**: Kotlin 1.8+
+- **Pola Arsitektur**: MVVM (Model-View-ViewModel) & Repository Pattern
+- **State Management & Async**: Kotlin Coroutines, Flow, LiveData, ViewModel
+- **Machine Learning Engine**: TensorFlow Lite Quantized Model (`Face_Detection`) & Firebase ML
+- **Backend & Cloud**: 
+  - Firebase Authentication (Google Sign-In)
+  - Cloud Firestore (Penyimpanan Riwayat Deteksi)
+  - Firebase Realtime Database (Artikel Kesehatan)
+- **Networking**: Retrofit 2, OkHttp3 Logging Interceptor, Gson
+- **UI Components**: Material 3 Design, ViewBinding, CameraX API (`camera-camera2`, `camera-lifecycle`, `camera-view`), Glide (Image Loading)
 
-6. **Penyimpanan Hasil Analisis di Firestore Firebase**
-   - Menyimpan hasil deteksi penyakit kulit dan tips perawatan di Firestore.
-   - [Dokumentasi Firebase Firestore](https://firebase.google.com/docs/firestore)
+---
 
-7. **Pengelolaan Source Code dengan Git**
-   - Menggunakan Git untuk kontrol versi dan mendeploy source code ke GitHub.
-   - [GitHub Repository](https://github.com/wahyuardiantito/DermaFace-An-App-For-Your-Facial-Skin-and-Care)
+## 📁 Struktur Direktori Proyek
 
-## Instalasi
+```
+SkinFace_Detection/
+├── app/
+│   ├── src/main/
+│   │   ├── java/com/dicoding/capstone/dermaface/
+│   │   │   ├── adapter/        # RecyclerView Adapters (Article, History)
+│   │   │   ├── data/           # Remote & Local Data Sources, API Services
+│   │   │   ├── repository/     # Repository Implementations
+│   │   │   ├── ui/             # Activity & Fragment Views (Login, Scan, Result, History)
+│   │   │   ├── utils/          # Image Converter, File Utility, Constants
+│   │   │   └── viewmodel/      # ViewModels (Main, Auth, Scan, Article)
+│   │   ├── res/                # XML Layouts, Material 3 Drawables & Color Themes
+│   │   └── AndroidManifest.xml
+│   └── build.gradle.kts
+├── screenshots/                # Tangkapan layar dokumentasi UI
+├── build.gradle.kts            # Build script root
+├── settings.gradle.kts
+└── README.md
+```
 
-Ikuti langkah-langkah berikut untuk menginstal dan menjalankan aplikasi ini:
+---
+
+## 🚀 Cara Kompilasi & Pengujian
 
 ### Prasyarat
+- Android Studio Iguana / Jellyfish (atau versi lebih baru)
+- JDK 17 atau JDK 21
+- Berkas `google-services.json` di direktori `app/`
 
-- Android Studio terbaru
-- Akun Firebase dengan project yang sudah dikonfigurasi
+### Langkah-Langkah
 
-### Langkah-langkah
+1. **Clone repositori ini:**
+   ```bash
+   git clone https://github.com/rijallmmuk/SkinFace_Detection.git
+   cd SkinFace_Detection
+   ```
 
-1. **Clone repositori**
-    ```bash
-    git clone https://github.com/wahyuardiantito/DermaFace-An-App-For-Your-Facial-Skin-and-Care.git
-    ```
+2. **Jalankan Build Gradle:**
+   ```bash
+   ./gradlew assembleDebug
+   ```
 
-2. **Buka proyek di Android Studio**
-    - Buka Android Studio dan pilih "Open an existing Android Studio project".
-    - Arahkan ke direktori tempat kamu meng-clone repositori ini.
+3. **Jalankan pada Perangkat Android / Emulator:**
+   - Hubungkan HP Android atau aktifkan Emulator.
+   - Klik **Run 'app'** pada Android Studio.
 
-3. **Konfigurasi Firebase**
-    - Tambahkan file `google-services.json` ke direktori `app`.
-    - Upload model `modelquantized.tflite` ke firebase ML dengan nama `Face_Detection`
-    - Konfigurasi Firebase dalam aplikasi dengan mengikuti petunjuk di [Firebase Documentation](https://firebase.google.com/docs).
+---
 
-4. **Jalankan aplikasi**
-    - Jalankan aplikasi di emulator atau perangkat fisik.
+## 👥 Tim Pengembang (Bangkit Capstone Team)
 
-## Penggunaan
+### 🤖 Machine Learning (ML)
+- **M281D4KY1503** – Wahyu Ardiantito S. *(Universitas Negeri Medan)*
+- **M734D4KX1910** – Juliani Jakin *(Institut Sains dan Teknologi Nasional)*
+- **M281D4KX3359** – Rabiahtul Adawiah Hasyani *(Universitas Negeri Medan)*
 
-1. Buka aplikasi DermaFace di perangkat Anda.
-2. Login menggunakan autentikasi Google.
-3. Unggah atau ambil gambar wajah Anda.
-4. Dapatkan hasil deteksi dan tips perawatan kulit.
+### 📱 Mobile Development (MD)
+- **A282D4KY3619** – **Mukhtarijal** *(Universitas Negeri Padang)*
+- **A282D4KX3580** – Hayatun Nupus *(Universitas Negeri Padang)*
 
-## Kontribusi
-
-Kami menyambut kontribusi dari siapa pun. Untuk berkontribusi, silakan lakukan langkah-langkah berikut:
-
-1. Fork repositori ini.
-2. Buat branch fitur:
-    ```bash
-    git checkout -b feature/AmazingFeature
-    ```
-3. Commit perubahan Anda:
-    ```bash
-    git commit -m 'Add some AmazingFeature'
-    ```
-4. Push ke branch:
-    ```bash
-    git push origin feature/AmazingFeature
-    ```
-5. Buat Pull Request.
-
-## Kontak
-
-Untuk pertanyaan lebih lanjut, hubungi [mukhtarijal6902@gmail.com](mukhtarijal6902@gmail.com).
-
-## Anggota Kelompok
-
-### Machine Learning (ML)
-- **M281D4KY1503** – Wahyu Ardiantito. S – Universitas Negeri Medan
-- **M734D4KX1910** – Juliani Jakin – Institut Sains dan Teknologi Nasional
-- **M281D4KX3359** – Rabiahtul Adawiah Hasyani – Universitas Negeri Medan
-
-### Mobile Development (MD)
-- **A282D4KX3580** – Hayatun Nupus – Universitas Negeri Padang
-- **A282D4KY3619** – Mukhtarijal – Universitas Negeri Padang
-
+---
+<p align="center">Dibuat dengan ❤️ untuk proyek Bangkit Academy Capstone.</p>
